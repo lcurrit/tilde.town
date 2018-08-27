@@ -31,9 +31,9 @@ gulp.task('sass', function () {
 });
 
 gulp.task('images', function () {
-	return gulp.src('app/images/**/*.+(png|jpg|jpeg|gif|svg)')
+	return gulp.src('app/img/**/*.+(png|jpg|jpeg|gif|svg)')
 		.pipe(cache(imagemin()))
-		.pipe(gulp.dest('dist/images'));
+		.pipe(gulp.dest('dist/img'));
 });
 
 gulp.task('fonts', function () {
