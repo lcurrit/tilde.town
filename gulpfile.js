@@ -75,5 +75,5 @@ gulp.task('default', function (callback) {
 });
 
 gulp.task('push', function (callback) {
-	runSequence(['build'], shell.task('scp dist/* tilde.town:~/public_html/', callback));
+	runSequence(['build'], shell.task('scp -r dist/* tilde.town:~/public_html/', callback));
 });

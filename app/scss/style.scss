@@ -12,7 +12,6 @@ body {
 }
 
 /* Main */
-
 .parallax {
 	height: 100vh;
 	overflow-x: hidden;
@@ -22,7 +21,6 @@ body {
 }
 
 /* Article */
-
 .parallax-content {
 	transform-style: preserve-3d;
 	margin-bottom: calc(100vh + 100px);
@@ -31,7 +29,6 @@ body {
 }
 
 /* Header */
-
 .parallax-background {
 	background-color: rgba(255, 0, 0, 0.25);
 	position: absolute;
@@ -44,7 +41,6 @@ body {
 }
 
 /* Section */
-
 .parallax-body {
 	transform: translateZ(0);
 }
