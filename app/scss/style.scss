@@ -1,46 +1,33 @@
-html {
-	height: 100%;
-	overflow: hidden;
+html{
+	height:100%;
 }
 
 body {
 	background-attachment: fixed;
 	background-image: linear-gradient(#fff, aqua);
 	background-repeat: no-repeat;
-	height: 100%;
-	margin: 0;
+	font-family: 'Roboto Mono', sans-serif;
+	height:100%;
 }
 
-/* Main */
-.parallax {
-	height: 100vh;
-	overflow-x: hidden;
-	overflow-y: auto;
-	perspective: 1px;
-	perspective-origin:0 0;
+.container {
+	display: flex;
+	flex-direction: column;
+	height:100%;
 }
 
-/* Article */
-.parallax-content {
-	transform-style: preserve-3d;
-	margin-bottom: calc(100vh + 100px);
-	min-height: 100vh;
-	position: relative;
-}
-
-/* Header */
-.parallax-background {
+.row {
 	background-color: rgba(255, 0, 0, 0.25);
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	transform: translateZ(-1px) scale(2);
-	transform-origin:0 0;
 }
 
-/* Section */
-.parallax-body {
-	transform: translateZ(0);
+.header {
+	flex: 0 0 auto;
+}
+
+.main {
+	flex: 1 0 auto;
+}
+
+.footer {
+	flex-shrink: 0;
 }
