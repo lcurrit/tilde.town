@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+	<meta name="theme-color" content="#ffbfbf">
 	<link rel="shortcut icon" href="img/favicon.ico">
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -18,49 +19,68 @@
 <body>
 
 	<div class="container pt-3">
-		<header class="header row py-3">
-			<div class="col">
-				<h1 class="text-center">tilde.town/~greely</h1>
+
+		<header class="header row py-3 align-items-center text-center">
+			<div class="col-sm-8">
+				<h1>tilde.town/~greely</h1>
+			</div>
+			<div class="col-sm-4 text-sm-right">
+				<img src="img/rockin.gif" />
 			</div>
 		</header>
 
+		<div class="menu row mt-3">
+			<div class="col">
+				<nav class="navbar navbar-expand navbar-light">
+					<ul class="navbar-nav">
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Town</i></a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item">Webring</a>
+								<a class="dropdown-item">Swag</a>
+								<a class="dropdown-item">Mastadon</a>
+								<a class="dropdown-item">Grafitti</a>
+								<a class="dropdown-item">IRC</a>
+								<a class="dropdown-item">Botany</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="https://twitter.com/Greely" data-toggle="dropdown">Me</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" data-details="about">About</a>
+								<a class="dropdown-item">Feels</a>
+								<a class="dropdown-item" data-details="music">Music</a>
+								<a class="dropdown-item">Racing</a>
+							</div>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
 		<main class="main my-3">
-			<section class="row py-3">
-				<div class="col-sm-12">
-					<h2>Me</h2>
-				</div>
-				<div class="col-sm-6 order-sm-1 text-center text-sm-right">
-					<img src="img/rockin.gif" />
-				</div>
-				<div class="col-sm-6 order-sm-0">
-					<ul>
-						<li><a href="feels/">Feels</a></li>
-						<li>Music</li>
-						<li>NASCAR</li>
-					</ul>
-				</div>
-				<div class="col-sm-12 order-sm-2">
-					<p>
-						Hi! I'm a spooky old webdev from Tempe, AZ.  I've struggled to define the purpose of my Tilde.Town page, but I think I've just about got it.  I'll dump everything here that I would've put on my old MySpace page.  Only this time, I'll do it with semantic markup.  :D
-					</p>
-				</div>
-			</section>
-			<section class="row py-3">
-				<div class="col">
-					<h2>Tilde.Town</h2>
-					<ul>
-						<li>Webring</li>
-						<li>Swag</li>
-						<li>Mastadon</li>
-						<li>Grafitti</li>
-						<li>IRC</li>
-						<li>Botany</li>
-					</ul>
-				</div>
-			</section>
+			<div class="sections">
+				<section id="about" class="row py-3" style="display:block;">
+					<div class="col-sm-12">
+						<p>
+							Hi! I'm a spooky old webdev from Tempe, AZ. I've struggled to define the
+							purpose of my Tilde.Town page, but I think I've just about got it. I'll dump
+							everything here that I would've put on my old MySpace page. Only this time,
+							I'll do it with semantic markup. :D
+						</p>
+					</div>
+				</section>
+				<section id="music" class="row py-3">
+					<div class="col-sm-12">
+						<p>
+							Diggin' the music man. (Placeholder for now).
+						</p>
+					</div>
+				</section>
+			</div>
 		</main>
 
-		<footer class="footer row mb-3 py-3">
+		<footer class="footer row mb-3">
 			<div class="col">
 				<nav class="navbar navbar-expand navbar-light justify-content-center text-center">
 					<ul class="navbar-nav">
@@ -77,9 +97,10 @@
 				</nav>
 			</div>
 		</footer>
+
 	</div>
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
