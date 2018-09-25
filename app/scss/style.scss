@@ -11,7 +11,7 @@ body {
 }
 
 h1 {
-	font-size: 1.7rem;
+	font-size: 1.6rem;
 }
 @media (min-width: 576px) {
 	h1 {
@@ -24,6 +24,8 @@ h1 {
 	flex-direction: column;
 	height: 100%;
 	max-width: 720px;
+	padding-left:30px;
+	padding-right:30px;
 }
 
 .header, .menu, .main section, .footer {
