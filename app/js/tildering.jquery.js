@@ -24,8 +24,8 @@
 				url: "/~dan/users.json",
 				success: function(data) {
 					$.each(data, function(key, value) {
-						if(data[key]["edited"] == 1 && data[key]["ringmember"] == 1) {
-							users.push(data[key]["homepage"]);
+						if(data[key].edited == 1 && data[key].ringmember == 1) {
+							users.push(data[key].homepage);
 						}
 					});
 				},
@@ -73,7 +73,7 @@
 			}).done(function() {
 				randomBoxURL = tildes[Math.floor(Math.random() * tildes.length)];
 				$("#trp_random_tilde").attr("href", randomBoxURL);
-			});;
+			});
 		}
 
 		return this.each(function() {
