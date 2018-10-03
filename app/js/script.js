@@ -4,7 +4,7 @@ $('a').click(function(e) {
 	e.preventDefault();
 	if($(this).data('details')) {
 		var id = $(this).data('details');
-		$('.sections > *').fadeOut('slow', function() {
+		$('.sections > *').fadeOut('slow').promise().done(function() {
 			$('#' + id).fadeIn('slow');
 		});
 	}
