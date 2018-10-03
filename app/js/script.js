@@ -1,5 +1,6 @@
 console.log('scripts loaded');
 
+// Hide / Show Sections
 $('a').click(function(e) {
 	e.preventDefault();
 	if($(this).data('details')) {
@@ -9,3 +10,8 @@ $('a').click(function(e) {
 		});
 	}
 });
+
+// Fire up the Tilde Ring
+if ($('#tilde_town_ring').length) {
+	$('#tilde_town_ring').tildeRing({styleRing:false, randomBox:false});
+}

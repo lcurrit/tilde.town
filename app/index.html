@@ -36,21 +36,21 @@
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Town</i></a>
 							<div class="dropdown-menu">
-								<a class="dropdown-item">Webring</a>
-								<a class="dropdown-item">Swag</a>
-								<a class="dropdown-item">Mastadon</a>
-								<a class="dropdown-item">Grafitti</a>
-								<a class="dropdown-item">IRC</a>
-								<a class="dropdown-item">Botany</a>
+								<a class="dropdown-item" data-details="webring">Webring</a>
+								<a class="dropdown-item" data-details="">Swag</a>
+								<a class="dropdown-item" data-details="">Mastadon</a>
+								<a class="dropdown-item" data-details="">Grafitti</a>
+								<a class="dropdown-item" data-details="">IRC</a>
+								<a class="dropdown-item" data-details="">Botany</a>
 							</div>
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="https://twitter.com/Greely" data-toggle="dropdown">Me</a>
 							<div class="dropdown-menu">
 								<a class="dropdown-item" data-details="about">About</a>
-								<a class="dropdown-item">Feels</a>
+								<a class="dropdown-item" data-details="">Feels</a>
 								<a class="dropdown-item" data-details="music">Music</a>
-								<a class="dropdown-item">Racing</a>
+								<a class="dropdown-item" data-details="">Racing</a>
 							</div>
 						</li>
 					</ul>
@@ -64,9 +64,14 @@
 					<div class="col-sm-12">
 						<p>
 							Hi! I'm a spooky old webdev from Tempe, AZ. I've struggled to define the
-							purpose of my Tilde.Town page, but I think I've just about got it. I'll dump
-							everything here that I would've put on my old MySpace page. Only this time,
-							I'll do it with semantic markup. :D
+							purpose of my Tilde.Town page, but I think I've just about got it.
+						</p>
+					</div>
+				</section>
+				<section id="webring" class="row py-3">
+					<div class="col-sm-12">
+						<p>
+							
 						</p>
 					</div>
 				</section>
@@ -79,6 +84,12 @@
 				</section>
 			</div>
 		</main>
+
+		<div class="webring row mb-3 py-3">
+			<div class="col">
+				<div id="tilde_town_ring"></div>
+			</div>
+		</div>
 
 		<footer class="footer row mb-3">
 			<div class="col">
@@ -104,7 +115,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-	<script src="js/hide-address-bar.js"></script>
+	<script src="js/tildering.jquery.js"></script>
 	<script src="js/script.js"></script>
 
 </body>

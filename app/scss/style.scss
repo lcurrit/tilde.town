@@ -28,7 +28,7 @@ h1 {
 	padding-right:30px;
 }
 
-.header, .menu, .main section, .footer {
+.header, .menu, .main section, .webring, .footer {
 	background-color: #ffbfbf;
 	box-shadow:0 5px 5px 0 rgba(0,0,0,0.25);
 	border:1px solid #000;
@@ -60,6 +60,10 @@ h1 {
 
 .main section {
 	display:none;
+}
+
+.webring {
+	flex-shrink:0;
 }
 
 .footer {
