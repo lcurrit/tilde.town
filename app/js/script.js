@@ -1,7 +1,7 @@
 console.log('scripts loaded');
 
 // Hide / Show Sections
-$('a').click(function(e) {
+$('.menu a').click(function(e) {
 	e.preventDefault();
 	if($(this).data('details')) {
 		var id = $(this).data('details');
