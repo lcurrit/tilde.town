@@ -79,13 +79,13 @@
 		return this.each(function() {
 			$(this).append("<div id=\"trp_tilde_ring\"></div>");
 			if(settings.randomUser == true) {
-				$(this).find("#trp_tilde_ring").append("<a id=\"trp_random_user\" href=\"\">random ~user</a>");
+				$(this).find("#trp_tilde_ring").append("<a id=\"trp_random_user\" href=\"\">random&nbsp;~user</a>");
 			}
 			if(settings.randomBox == true) {
-				$(this).find("#trp_tilde_ring").append("<a id=\"trp_random_tilde\" href=\"\">random ~box</a>");
+				$(this).find("#trp_tilde_ring").append("<a id=\"trp_random_tilde\" href=\"\">random&nbsp;~box</a>");
 			}
 			if(settings.nextUser == true) {
-				$(this).find("#trp_tilde_ring").append("<a id=\"trp_next_user\" href=\"\">next ~user</a>");
+				$(this).find("#trp_tilde_ring").append("<a id=\"trp_next_user\" href=\"\">next&nbsp;~user</a>");
 			}
 			if(settings.joinLink == true) {
 				$(this).find("#trp_tilde_ring").append("<br /><a id=\"trp_join_ring\" href=\"/~um/tilde_ring/join.html\">join</a>");

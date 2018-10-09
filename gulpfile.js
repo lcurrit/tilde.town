@@ -56,6 +56,11 @@ gulp.task('javascript', function () {
 		.pipe(gulp.dest('dist/js'));
 });
 
+gulp.task('python', function () {
+	return gulp.src('app/python/**/*')
+		.pipe(gulp.dest('dist/python'));
+});
+
 gulp.task('useref', function () {
 	return gulp.src('app/*.html')
 		//.pipe(useref())
@@ -81,12 +86,12 @@ gulp.task('watch', ['browserSync', 'sass'], function () {
 	gulp.watch('app/*.html', browserSync.reload);
 });
 
-gulp.task('build', function (callback) {
-	runSequence('clean:dist', 'sass', ['css', 'fonts', 'images', 'javascript'], 'useref', callback);
-});
-
 gulp.task('default', function (callback) {
 	runSequence(['watch'], callback);
+});
+
+gulp.task('build', function (callback) {
+	runSequence('clean:dist', 'sass', ['css', 'fonts', 'images', 'javascript', 'python'], 'useref', callback);
 });
 
 gulp.task('push', function (callback) {
