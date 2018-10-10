@@ -3,18 +3,27 @@ console.log("%c%s","color: rgb(33, 37, 41); background: #ffbfbf; font-size: 20px
 console.log("%c%s","color: rgb(33, 37, 41); background: rgb(204, 255, 128); font-size: 20px; padding:10px;", "Of course you do:");
 console.log("%c%s","color: rgb(33, 37, 41); background: aqua; font-size: 20px; padding:10px;", window.location.href + "img/luna.jpg");
 
-// Hide / Show Sections
-$('.menu a').click(function(e) {
-	e.preventDefault();
-	if($(this).data('details')) {
-		var id = $(this).data('details');
-		$('.sections > *').fadeOut('slow').promise().done(function() {
-			$('#' + id).css("display", "flex").hide().fadeIn('slow');
-		});
-	}
-});
+$(function(){
 
-// Fire up the Tilde Ring
-if ($('#tilde_town_ring').length) {
-	$('#tilde_town_ring').tildeRing({styleRing:false, randomBox:false});
-}
+	// Hide / Show Sections
+	$('.menu a').click(function(e) {
+		e.preventDefault();
+		if($(this).data('details')) {
+			var id = $(this).data('details');
+			$('.sections > *').fadeOut('slow').promise().done(function() {
+				$('#' + id).css("display", "flex").hide().fadeIn('slow');
+			});
+		}
+	});
+
+	// Pixelate all JPG images
+	$('img[src$=".jpg"]').one('load',function() {
+        $(this).pixelate({ value: 0.1});
+    });
+
+	// Fire up the Tilde Ring
+	if ($('#tilde_town_ring').length) {
+		$('#tilde_town_ring').tildeRing({styleRing:false, randomBox:false});
+	}
+
+});
