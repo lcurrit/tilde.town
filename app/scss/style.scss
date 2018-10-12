@@ -85,3 +85,14 @@ canvas {
 .footer {
 	flex-shrink: 0;
 }
+
+.pi {
+	position:absolute;
+	bottom:0;
+	right:0;
+	padding:5px;
+
+	a {
+		text-decoration:none;
+	}
+}

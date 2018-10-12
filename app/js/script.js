@@ -16,11 +16,6 @@ $(function(){
 		}
 	});
 
-	// Pixelate all JPG images
-	$('img[src$=".jpg"]').one('load',function() {
-        $(this).pixelate({ value: 0.1});
-    });
-
 	// Fire up the Tilde Ring
 	if ($('#tilde_town_ring').length) {
 		$('#tilde_town_ring').tildeRing({styleRing:false, randomBox:false});
