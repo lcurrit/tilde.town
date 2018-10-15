@@ -75,7 +75,9 @@ canvas {
 			background-color:#fff;
 			border:1px solid #000;
 			margin-bottom:0;
+			overflow-wrap: break-word;
 			padding:1em;
+			white-space: pre-wrap;
 		}
 	}
 }
