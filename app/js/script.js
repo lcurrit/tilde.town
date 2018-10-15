@@ -18,7 +18,13 @@ $(function(){
 
 	// Fire up the Tilde Ring
 	if ($('#tilde_town_ring').length) {
-		$('#tilde_town_ring').tildeRing({styleRing:false, randomBox:false});
+		$('#tilde_town_ring').tildeRing({
+			randomUser:true,
+			randomBox:true,
+			nextUser:true,
+			joinLink:true,
+			styleRing:false
+		});
 	}
 
 });
