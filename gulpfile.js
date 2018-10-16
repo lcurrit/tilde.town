@@ -12,6 +12,7 @@ var cache = require('gulp-cache');
 var del = require('del');
 var runSequence = require('run-sequence');
 var shell = require('gulp-shell');
+var dExists = require('directory-exists');
 
 gulp.task('sass', function () {
 	return gulp.src('app/scss/**/*.scss')
@@ -56,11 +57,6 @@ gulp.task('javascript', function () {
 		.pipe(gulp.dest('dist/js'));
 });
 
-gulp.task('python', function () {
-	return gulp.src('app/python/**/*')
-		.pipe(gulp.dest('dist/python'));
-});
-
 gulp.task('useref', function () {
 	return gulp.src('app/*.html')
 		//.pipe(useref())
@@ -68,7 +64,7 @@ gulp.task('useref', function () {
 		.pipe(gulp.dest('dist'));
 });
 
-gulp.task('clean:dist', function () {
+gulp.task('clean', function () {
 	return del.sync('dist');
 });
 
@@ -86,14 +82,27 @@ gulp.task('watch', ['browserSync', 'sass'], function () {
 	gulp.watch('app/*.html', browserSync.reload);
 });
 
+gulp.task('setup', function() {
+	dExists('app').then(result => {
+		if(!result){
+			console.log('Create directory structure');
+			// Build out structure if setting up for first time.
+		}
+	});
+});
+
 gulp.task('default', function (callback) {
-	runSequence(['watch'], callback);
+	runSequence('watch', callback);
 });
 
 gulp.task('build', function (callback) {
-	runSequence('clean:dist', 'sass', ['css', 'fonts', 'images', 'javascript', 'python'], 'useref', callback);
+	runSequence('clean', 'sass', ['css', 'fonts', 'images', 'javascript'], 'useref', callback);
 });
 
+gulp.task('app', shell.task(['scp -r dist/* tilde.town:~/public_html/']));
+
+gulp.task('code', shell.task(['scp -r code/* tilde.town:~/public_html/code/']));
+
 gulp.task('push', function (callback) {
-	runSequence(['build'], shell.task('scp -r dist/* tilde.town:~/public_html/', callback));
+	runSequence('build', 'app', 'code', callback);
 });

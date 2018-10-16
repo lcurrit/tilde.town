@@ -2,5 +2,5 @@
 
 npm install -g gulp
 
-npm init/n
+npm init
 npm install gulp --save-dev
