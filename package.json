@@ -4,12 +4,13 @@
   "description": "Auto push to tilde.town profile",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "gulp setup"
   },
-  "author": "",
+  "author": "Levi Currit",
   "license": "ISC",
   "repository": {
-	"private": true
+    "private": true
   },
   "devDependencies": {
     "browser-sync": "^2.24.6",

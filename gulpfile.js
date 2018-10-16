@@ -12,7 +12,27 @@ var cache = require('gulp-cache');
 var del = require('del');
 var runSequence = require('run-sequence');
 var shell = require('gulp-shell');
-var dExists = require('directory-exists');
+var directoryExists = require('directory-exists');
+
+gulp.task('setup', function() {
+	directoryExists('app').then(result => {
+		if(!result){
+			return gulp.src('*.*', {read: false})
+			.pipe(gulp.dest('app/'))
+			.pipe(gulp.dest('app/css'))
+			.pipe(gulp.dest('app/fonts'))
+			.pipe(gulp.dest('app/img'))
+			.pipe(gulp.dest('app/js'))
+			.pipe(gulp.dest('app/scss'));
+		}
+	});
+	directoryExists('code').then(result => {
+		if(!result){
+			return gulp.src('*.*', {read: false})
+			.pipe(gulp.dest('code/'));
+		}
+	});
+});
 
 gulp.task('sass', function () {
 	return gulp.src('app/scss/**/*.scss')
@@ -80,15 +100,6 @@ gulp.task('watch', ['browserSync', 'sass'], function () {
 	gulp.watch('app/scss/**/*.scss', ['sass']);
 	gulp.watch('app/js/**/*.js', browserSync.reload);
 	gulp.watch('app/*.html', browserSync.reload);
-});
-
-gulp.task('setup', function() {
-	dExists('app').then(result => {
-		if(!result){
-			console.log('Create directory structure');
-			// Build out structure if setting up for first time.
-		}
-	});
 });
 
 gulp.task('default', function (callback) {
