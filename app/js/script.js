@@ -20,7 +20,7 @@ $(function(){
 	if ($('#tilde_town_ring').length) {
 		$('#tilde_town_ring').tildeRing({
 			randomUser:true,
-			randomBox:true,
+			randomBox:false,
 			nextUser:true,
 			joinLink:true,
 			styleRing:false
