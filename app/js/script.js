@@ -28,7 +28,7 @@ $(function(){
 	}
 
 	// Populate Feels
-	$('#feels .latest-feels').load('/~greely/feels/ div.entry:first', function() {
+	$('.latest-feels').load('/~greely/feels/ div.entry:first', function() {
 		var h5 = $(this).find('h5');
 		var plain = h5.text();
 		h5.html(plain);
