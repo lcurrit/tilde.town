@@ -8,6 +8,7 @@ $(function(){
 	// Hide / Show Sections
 	$('.menu a').click(function(e) {
 		e.preventDefault();
+		console.log($(this).text());
 		if($(this).data('details')) {
 			var id = $(this).data('details');
 			$('.sections > *').fadeOut('slow').promise().done(function() {
@@ -34,6 +35,5 @@ $(function(){
 		h5.html(plain);
 		$(this).find('.permalink').remove();
 	});
-
 
 });
