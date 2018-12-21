@@ -8,12 +8,28 @@ $(function(){
 	// Hide / Show Sections
 	$('.menu a').click(function(e) {
 		e.preventDefault();
-		console.log($(this).text());
-		if($(this).data('details')) {
-			var id = $(this).data('details');
+		var $this = $(this);
+		var $parentLI = $this.parent('li');
+		if($this.data('details')) {
+			var id = $this.data('details');
 			$('.sections > *').fadeOut('slow').promise().done(function() {
-				$('#' + id).css("display", "flex").hide().fadeIn('slow');
+				$('#' + id).css('display', 'flex').hide().fadeIn('slow');
 			});
+		} else if($parentLI.hasClass('grow')) {
+			$parentLI.removeClass('grow');
+			$parentLI.siblings().css('flex-grow', '1');
+			$this.next('ul').css("display", "flex").hide();
+
+		} else {
+			$parentLI.css('flex-grow', '1').addClass('grow');
+			$parentLI.siblings().css('flex-grow', '0');
+
+			$parentLI.siblings().children('ul').fadeOut('slow').promise().done(function() {
+				$this.next('ul').css("display", "flex").hide().promise().done(function() {
+					$(this).fadeIn('slow');
+				});
+			});
+
 		}
 	});
 
