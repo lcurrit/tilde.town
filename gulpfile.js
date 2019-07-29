@@ -110,9 +110,9 @@ gulp.task('build', function (callback) {
 	runSequence('clean', 'sass', ['css', 'fonts', 'images', 'javascript'], 'useref', callback);
 });
 
-gulp.task('app', shell.task(['scp -r dist/* tilde.town:~/public_html/']));
+gulp.task('app', shell.task(['scp -r dist/* greely@tilde.town:~/public_html/']));
 
-gulp.task('code', shell.task(['scp -r code/* tilde.town:~/public_html/code/']));
+gulp.task('code', shell.task(['scp -r code/* greely@tilde.town:~/public_html/code/']));
 
 gulp.task('push', function (callback) {
 	runSequence('build', 'app', 'code', callback);

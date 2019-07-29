@@ -15,21 +15,17 @@ $(function(){
 			$('.sections > *').fadeOut('slow').promise().done(function() {
 				$('#' + id).css('display', 'flex').hide().fadeIn('slow');
 			});
-		} else if($parentLI.hasClass('grow')) {
-			$parentLI.removeClass('grow');
-			$parentLI.siblings().css('flex-grow', '1');
-			$this.next('ul').css("display", "flex").hide();
-
-		} else {
-			$parentLI.css('flex-grow', '1').addClass('grow');
-			$parentLI.siblings().css('flex-grow', '0');
-
-			$parentLI.siblings().children('ul').fadeOut('slow').promise().done(function() {
-				$this.next('ul').css("display", "flex").hide().promise().done(function() {
-					$(this).fadeIn('slow');
-				});
-			});
-
+		}
+		if($this.siblings().length > 0) {
+			if($this.siblings().hasClass('grow')) {
+				$this.siblings().removeClass('grow');
+				$this.siblings().css('display', 'none');
+			} else {
+				$('.menu ul ul').css('display', 'none');
+				$('.menu ul ul').removeClass('grow');
+				$this.siblings().addClass('grow');
+				$this.siblings().css('display', 'flex');
+			}
 		}
 	});
 
